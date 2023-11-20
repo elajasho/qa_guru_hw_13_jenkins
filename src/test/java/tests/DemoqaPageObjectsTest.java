@@ -1,8 +1,13 @@
 package tests;
+
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationFormPage;
 import pages.components.TableComponent;
 
+import static com.codeborne.selenide.logevents.SelenideLogger.step;
+
+@Tag("RemoteTest")
 public class DemoqaPageObjectsTest extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
     TableComponent tableComponent = new TableComponent();
@@ -10,9 +15,13 @@ public class DemoqaPageObjectsTest extends TestBase {
 
     @Test
     void mainTest() {
+        step("Open source", () -> {
         registrationFormPage
                 .openPage()
-                .removeBanners()
+                .removeBanners();
+        });
+        step("Fill in form", () -> {
+        registrationFormPage
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setUserEmail(testData.randomEmail)
@@ -25,9 +34,12 @@ public class DemoqaPageObjectsTest extends TestBase {
                 .setUserAddress(testData.streetAddress)
                 .setUserState(testData.randomState)
                 .setUserCity(testData.getRandomCity());
+        });
+        step("Submit", () -> {
         registrationFormPage
                 .hitSubmitWithBothLegs();
-
+        });
+        step("Check results", () -> {
         tableComponent
                 .checkResult("Student Name", testData.firstName + " " + testData.lastName)
                 .checkResult("Student Email", testData.randomEmail)
@@ -40,5 +52,6 @@ public class DemoqaPageObjectsTest extends TestBase {
                 .checkResult("Address", testData.streetAddress)
                 .checkResult("State and City", testData.randomState)
                 .checkResult("State and City", testData.getRandomCity());
+        });
     }
 }
