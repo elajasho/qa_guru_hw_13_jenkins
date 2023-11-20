@@ -54,8 +54,13 @@ tasks.withType(Test) {
     }
 }
 
-task simple_test(type: Test) {
+task SelenideStepsTest(type: Test) {
     useJUnitPlatform {
         includeTags("SelenideStepsTest")
+    }
+}
+task DemoqaPageObjectsTest(type: Test) {
+    useJUnitPlatform {
+        includeTags("DemoqaPageObjectsTest")
     }
 }

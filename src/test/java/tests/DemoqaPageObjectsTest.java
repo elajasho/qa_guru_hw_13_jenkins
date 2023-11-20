@@ -7,7 +7,7 @@ import pages.components.TableComponent;
 
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
-@Tag("RemoteTest")
+@Tag("DemoqaPageObjectsTest")
 public class DemoqaPageObjectsTest extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
     TableComponent tableComponent = new TableComponent();
