@@ -11,22 +11,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 public class TestBase {
-//    Старый блок
-//    @BeforeAll
-//    static void beforeAll() {
-//        Configuration.browser = "chrome";
-//        Configuration.holdBrowserOpen = false;
-//        Configuration.browserSize = "1300x1000";
-//        Configuration.baseUrl = "https://demoqa.com";
-//        Configuration.pageLoadStrategy = "eager";
-//    }
+
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-//        Configuration.browser = "chrome";
         Configuration.timeout = 10000;
-//        Configuration.holdBrowserOpen = true;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
@@ -47,4 +37,4 @@ public class TestBase {
 //        Attach.browserConsoleLogs();
 //        Attach.addVideo();
 //    }
- }
+}
