@@ -56,12 +56,6 @@ tasks.withType(Test) {
 
 task simple_test(type: Test) {
     useJUnitPlatform {
-        includeTags("simple")
-    }
-}
-
-task demoqa_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("RemoteTest")
+        includeTags("SelenideStepsTest")
     }
 }
