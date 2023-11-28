@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
 
 @Tag("SelenideStepsTest")
-public class SelenideStepsTest extends TestBase {
+public class SelenideStepsTest extends TestBaseRemote {
 
 
             private final static String REPOSITORY = "eroshenkoam/allure-example";
