@@ -1,0 +1,19 @@
+{
+  "base": {
+    "project": "${JOB_BASE_NAME}",
+    "environment": "remote",
+    "comment": "Hey @elajasho your test is ready",
+    "reportLink": "${BUILD_URL}",
+    "language": "en",
+    "messenger": "telegram",
+    "allureFolder": "build/allure-report/",
+    "enableChart": true,
+    "logo": "logo.png",
+    "durationFormat": "HH:mm:ss.SSS"
+  },
+  "telegram": {
+    "token": "AAGk8UaGL2Zns8Ggax8jZQ0wzBR3XVWlQr4",
+    "chat": "-4065543314",
+    "replyTo": ""
+  }
+}
